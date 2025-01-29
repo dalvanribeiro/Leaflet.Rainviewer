@@ -32,6 +32,7 @@ L.Control.Rainviewer = L.Control.extend({
 
         this.link = L.DomUtil.create('a', 'leaflet-control-rainviewer-button leaflet-bar-part', this.container);
         this.link.href = '#';
+        L.DomEvent.on(this.link, 'click', this.load, this);
         this.load(map);
         return null;
 
@@ -139,7 +140,7 @@ L.Control.Rainviewer = L.Control.extend({
     addLayer: function(ts) {
         var map = this._map;
         if (!this.radarLayers[ts]) {
-            this.radarLayers[ts] = new L.TileLayer('https://tilecache.rainviewer.com/v2/radar/' + ts + '/256/{z}/{x}/{y}/2/1_0.png', {
+            this.radarLayers[ts] = new L.TileLayer('https://tilecache.rainviewer.com/v2/radar/' + ts + '/256/{z}/{x}/{y}/2/1_1.png', {
                 tileSize: 256,
                 opacity: 0.001,
 				transparent: true,

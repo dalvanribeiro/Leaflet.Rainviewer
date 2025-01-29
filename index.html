@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Mapa nuvens</title>
+	<title>Leaflet.Rainviewer - DEMO</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +35,17 @@
 		});
 		mymap.addLayer(osm);
 
-		var rainviewer = new L.Control.Rainviewer({});
-		rainviewer.load(mymap);
+		var rainviewer = L.control.rainviewer({
+			position: 'bottomleft',
+			nextButtonText: '>',
+			playStopButtonText: 'Start/Stop',
+			prevButtonText: '<',
+			positionSliderLabelText: "Time:",
+			opacitySliderLabelText: "Opacity:",
+			animationInterval: 500,
+			opacity: 0.5
+		});
+		rainviewer.addTo(mymap);
 	</script>
 
 </body>
