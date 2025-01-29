@@ -7,7 +7,7 @@ L.Control.Rainviewer = L.Control.extend({
         positionSliderLabelText: "Hour:",
         opacitySliderLabelText: "Opacity:",
         animationInterval: 500,
-        opacity: 0.5
+        opacity: 1
     },
 
     onAdd: function (map) {
@@ -140,7 +140,7 @@ L.Control.Rainviewer = L.Control.extend({
     addLayer: function(ts) {
         var map = this._map;
         if (!this.radarLayers[ts]) {
-            this.radarLayers[ts] = new L.TileLayer('https://tilecache.rainviewer.com/v2/radar/' + ts + '/256/{z}/{x}/{y}/2/1_1.png', {
+            this.radarLayers[ts] = new L.TileLayer('https://tilecache.rainviewer.com/v2/radar/' + ts + '/256/{z}/{x}/{y}/8/1_0.png', {
                 tileSize: 256,
                 opacity: 0.001,
 				transparent: true,
