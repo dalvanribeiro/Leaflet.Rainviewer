@@ -35,17 +35,8 @@
 		});
 		mymap.addLayer(osm);
 
-		var rainviewer = L.control.rainviewer({
-			position: 'bottomleft',
-			nextButtonText: '>',
-			playStopButtonText: 'Start/Stop',
-			prevButtonText: '<',
-			positionSliderLabelText: "Time:",
-			opacitySliderLabelText: "Opacity:",
-			animationInterval: 500,
-			opacity: 0.5
-		});
-		//rainviewer.addTo(mymap);
+		var rainviewer = new L.Control.Rainviewer({});
+		rainviewer.load(mymap);
 	</script>
 
 </body>
