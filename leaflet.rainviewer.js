@@ -32,7 +32,7 @@ L.Control.Rainviewer = L.Control.extend({
 
         this.link = L.DomUtil.create('a', 'leaflet-control-rainviewer-button leaflet-bar-part', this.container);
         this.link.href = '#';
-        this.load(map);
+        this.load(this);
         L.DomEvent.on(this.link, 'click', this.load, this);
         return this.container;
 
